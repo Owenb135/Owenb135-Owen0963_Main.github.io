@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bug Tracker</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #1e66ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .button {
+      background: white;
+      color: #1e66ff;
+      padding: 12px 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      text-align: center;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+      background: #e6e6e6;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bug Tracker</h1>
+
+  <div class="buttons" id="buttons"></div>
+
+  <script>
+    const links = [
+      {
+        name: "FBI-Gear---Forge-1.12.2-Modding-Project",
+        url: "https://github.com/Owenb135/FBI-Gear---Forge-1.12.2-Modding-Project-/issues"
+      },
+      {
+        name: "Weather-App",
+        url: "https://github.com/Owenb135/Weather-App/issues"
+      },
+      {
+        name: "THE-MULTIVERSE",
+        url: "https://github.com/Owenb135/THE-MULTIVERSE/issues"
+      },
+      {
+        name: "Doggo-Reborn-Expanded",
+        url: "https://github.com/Owenb135/Doggo-Reborn-Expanded/issues"
+      }
+    ];
+
+    const container = document.getElementById("buttons");
+
+    links.forEach(link => {
+      const a = document.createElement("a");
+      a.href = link.url;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.className = "button";
+      a.textContent = link.name;
+      container.appendChild(a);
+    });
+  </script>
+</body>
+</html>
